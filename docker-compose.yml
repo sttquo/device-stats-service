@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: device_stats_api
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@db:5432/device_stats
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    container_name: device_stats_db
+    environment:
+      POSTGRES_DB: device_stats
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"

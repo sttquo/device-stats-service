@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "device-stats-service"
+version = "0.1.0"
+description = "Service for collecting and analyzing device statistics"
+authors = ["Egor"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "*"
+uvicorn = "*"
+sqlalchemy = "*"
+pydantic = "*"
+psycopg = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
